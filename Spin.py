@@ -69,11 +69,13 @@ class Wheel(object):
     def addOutcome(self, numDex, outcome):
         """
         takes index in the tuple of bins. take bin at that place. add 'outcome' to that bin
-        :return:
+        changes __bins
         """
         bns = self.__bins[numDex]
         bn = Bin([x for x in bns] + [outcome])
-        return bn
+        pn = [x for x in self.__bins]
+        pn[numDex] = bn
+        print pn
     pass
 
 class BinBuilder(object):
@@ -82,5 +84,4 @@ class BinBuilder(object):
             Wheel().bins()[num] = Outcome(num, 35)
 
 banana = Wheel()
-banana.addOutcome(12, Outcome("Puppets", 45))
-#print Bin([Outcome("Puppets", 45), Outcome("Puppests", 487)]) | Bin([Outcome("Puppetss", 45)])
+banana.addOutcome(1, Outcome("Puppets", 45))
