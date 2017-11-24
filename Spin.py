@@ -34,16 +34,16 @@ class Outcome(object):
     def __str__(self):
         """
         :return: Name and odds of the outcome
-        :rtype: string
+        :rtype: str
         """
         return "{} ({}:1)".format(self._name, self._odds)
 
     def __repr__(self):
         """
         :return: Name and odds of the outcome
-        :rtype: string
+        :rtype: str
         """
-        return "Outcome({} {})".format(self._name, self._odds)
+        return "Outcome({!r} {})".format(self._name, self._odds)
 
     def winAmount(self, amount):
         """
@@ -57,17 +57,29 @@ class Bin(frozenset):
 
 class Wheel(object):
     def __init__(self):
+        self.__bins = self.bins()
         pass
 
     def bins(self):
-        return tuple(Bin() for i in range(38))
+        return tuple(Bin([Outcome("TESTOUTCOME", 1)]) for i in range(38))
 
     def rng(self):
         pass
 
+    def addOutcome(self, numDex, outcome):
+        """
+        takes index in the tuple of bins. take bin at that place. add 'outcome' to that bin
+        :return:
+        """
+        bn = self.__bins[numDex]
+        nbin = bn.append(outcome)
+        print bn
     pass
 
 class BinBuilder(object):
     def straight(self):
         for num in xrange(1, 37):
             Wheel().bins()[num] = Outcome(num, 35)
+
+banana = Wheel()
+banana.addOutcome(12, Outcome("Puppets", 45))
