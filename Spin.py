@@ -45,6 +45,13 @@ class Outcome(object):
         """
         return "Outcome({} {})".format(self._name, self._odds)
 
+    def winAmount(self, amount):
+        """
+        :return: Multiply this Outcome's odds by the given amount. The product is returned.
+        :rtype: int
+        """
+        return amount * self._odds
+
 class Bin(frozenset):
     pass
 
