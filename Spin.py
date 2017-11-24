@@ -13,7 +13,7 @@ class Outcome(object):
         :return: True if the objects are equal, else False.
         :rtype: bool
         """
-        return self._name == other.__name
+        return self._name == other._name
 
     def __ne__(self, other):
         """
@@ -71,9 +71,9 @@ class Wheel(object):
         takes index in the tuple of bins. take bin at that place. add 'outcome' to that bin
         :return:
         """
-        bn = self.__bins[numDex]
-        nbin = bn.append(outcome)
-        print bn
+        bns = self.__bins[numDex]
+        bn = Bin([x for x in bns] + [outcome])
+        return bn
     pass
 
 class BinBuilder(object):
@@ -83,3 +83,4 @@ class BinBuilder(object):
 
 banana = Wheel()
 banana.addOutcome(12, Outcome("Puppets", 45))
+#print Bin([Outcome("Puppets", 45), Outcome("Puppests", 487)]) | Bin([Outcome("Puppetss", 45)])
