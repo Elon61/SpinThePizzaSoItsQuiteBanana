@@ -1,4 +1,4 @@
-import bin
+import bin_stuff
 import outcome
 class Wheel(object):
     def __init__(self):
@@ -6,7 +6,7 @@ class Wheel(object):
         pass
 
     def bins(self):
-        return bin([outcome("TESTOUTCOME", 1)] for i in range(38))
+        return bin_stuff.Bin([outcome("TESTOUTCOME", 1)] for i in range(38))
 
     def rng(self):
         pass
@@ -17,7 +17,7 @@ class Wheel(object):
         changes __bins
         """
         bns = self._bins[numDex]
-        bn = bin(bns | {outcome})
+        bn = bin_stuff(bns | {outcome})
         pn = [x for x in self._bins]
         pn[numDex] = bn
         print pn
