@@ -1,5 +1,6 @@
 import bin_stuff
 import outcome
+
 class Wheel(object):
     def __init__(self):
         self._bins = self.bins()
