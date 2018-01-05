@@ -6,7 +6,7 @@ class Wheel(object):
         pass
 
     def bins(self):
-        return tuple(bin([outcome("TESTOUTCOME", 1)]) for i in range(38))
+        return bin([outcome("TESTOUTCOME", 1)] for i in range(38))
 
     def rng(self):
         pass
