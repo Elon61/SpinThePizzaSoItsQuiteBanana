@@ -7,7 +7,7 @@ class Spinner(object):
         pass
 
     def bins(self):
-        return [outcome.Outcome("TESTOUTCOME", 1) for i in range(38)]
+        return [bin_stuff.Bin(str(i)) for i in range(38)]
 
     def rng(self):
         pass
@@ -18,8 +18,6 @@ class Spinner(object):
         changes __bins
         """
         bns = self._bins[numDex]
-        bn = bin_stuff.Bin(bns | {outcomed})
-        pn = [x for x in self._bins]
-        pn[numDex] = bn
-        print pn
+        bns.add(outcomed)
+        print bns
     pass

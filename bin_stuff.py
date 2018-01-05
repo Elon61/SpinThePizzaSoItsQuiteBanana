@@ -1,6 +1,6 @@
 import outcome
 import spinner
-class Bin(frozenset):
+class Bin(set):
     pass
 
 class BinBuilder(object):
