@@ -1,6 +1,7 @@
 import spinner
 import outcome
+import bin_stuff
 banana = spinner.Spinner()
-#banana.addOutcome(1, outcome.Outcome("Puppets", 45))
-banana.addOutcome(1, outcome.Outcome("shame", 2))
+ba = bin_stuff.BinBuilder()
+ba.straight(banana)
 print banana._bins

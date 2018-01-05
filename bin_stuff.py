@@ -4,11 +4,14 @@ class Bin(set):
     pass
 
 class BinBuilder(object):
-    def __init__(self, spin):
-        _spin = spin
-    def straight(self):
+    def __init__(self):
+        pass
+
+    def straight(self, spin):
         for num in xrange(1, 37):
-            self._spin.addOutcome(num, outcome.Outcome(num, 35))
+            spin.addOutcome(num, outcome.Outcome(num, 35))
+        spin.addOutcome(37, outcome.Outcome("00", 35))
+        spin.addOutcome(0, outcome.Outcome("0", 35))
 
     def split(self):
         pass
