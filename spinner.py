@@ -1,7 +1,7 @@
 import bin_stuff
 import outcome
 
-class Wheel(object):
+class Spinner(object):
     def __init__(self):
         self._bins = self.bins()
         pass
