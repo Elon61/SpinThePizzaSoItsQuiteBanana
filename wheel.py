@@ -11,13 +11,13 @@ class Wheel(object):
     def rng(self):
         pass
 
-    def addOutcome(self, numDex, outcome):
+    def addOutcome(self, numDex, outcomed):
         """
         takes index in the tuple of bins. take bin at that place. add 'outcome' to that bin
         changes __bins
         """
         bns = self._bins[numDex]
-        bn = bin_stuff.Bin(bns | {outcome})
+        bn = bin_stuff.Bin(bns | {outcomed})
         pn = [x for x in self._bins]
         pn[numDex] = bn
         print pn

@@ -6,4 +6,4 @@ class Bin(frozenset):
 class BinBuilder(object):
     def straight(self):
         for num in xrange(1, 37):
-            wheel().bins()[num] = outcome(num, 35)
+            wheel.Wheel().bins()[num] = outcome.Outcome(num, 35)
