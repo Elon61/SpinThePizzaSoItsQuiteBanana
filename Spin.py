@@ -72,7 +72,7 @@ class Wheel(object):
         changes __bins
         """
         bns = self.__bins[numDex]
-        bn = Bin([x for x in bns] + [outcome])
+        bn = Bin(bns | {outcome})
         pn = [x for x in self.__bins]
         pn[numDex] = bn
         print pn
