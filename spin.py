@@ -1,3 +1,4 @@
-
-banana = Wheel()
-banana.addOutcome(1, Outcome("Puppets", 45))
+import spinner
+import outcome
+banana = spinner.Wheel()
+banana.addOutcome(1, outcome.Outcome("Puppets", 45))
