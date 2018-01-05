@@ -7,7 +7,7 @@ class Spinner(object):
         pass
 
     def bins(self):
-        return (outcome("TESTOUTCOME", 1) for i in range(38))
+        return [outcome.Outcome("TESTOUTCOME", 1) for i in range(38)]
 
     def rng(self):
         pass
