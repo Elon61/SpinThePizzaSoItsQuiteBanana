@@ -52,7 +52,7 @@ class BinBuilder(object):
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num, num + 1, num + 3, num+4), 8))
             if (num-1) % 3 != 0 and num < 34:
                 # all but right row.
-                spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num - 1, num, num + 3, num + 4), 8))
+                spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num - 1, num, num + 2, num + 3), 8))
 
     def line(self):
         pass
