@@ -15,11 +15,11 @@ class BinBuilder(object):
     def split(self, spin):
         for num in xrange(1, 37):
             if num % 3 != 0:
-                #all but the right row
+                #all but the right column
                 spin.addOutcome(num, outcome.Outcome("{}-{}".format(num, num + 1), 17))
 
             if (num - 1) % 3 != 0:
-                #all but the left row
+                #all but the left column
                 spin.addOutcome(num, outcome.Outcome("{}-{}".format(num - 1, num), 17))
 
             if num > 3:
@@ -33,38 +33,39 @@ class BinBuilder(object):
     def street(self, spin):
         for num in xrange(1, 37):
             if num % 3 == 0:
-                #all the right row
+                #all the right column
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}".format(num - 2, num - 1, num), 11))
 
             if (num - 1) % 3 == 0:
-                #all the left row
+                #all the left column
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}".format(num, num + 1, num + 2), 11))
 
             if (num - 2) % 3 == 0:
-                #all the middle row
+                #all the middle column
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}".format(num - 1, num, num + 1), 11))
 
 
     def corner(self, spin):
         for num in xrange(1, 37):
             if num % 3 != 0 and num < 34:
-                #all but right row and <34.
+                #all but right column and <34.
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num, num + 1, num + 3, num + 4), 8))
 
-            if (num-1) % 3 != 0 and num < 34:
-                # all but left row and  <34.
+            if (num - 1) % 3 != 0 and num < 34:
+                # all but left column and  <34.
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num - 1, num, num + 2, num + 3), 8))
 
             if num % 3 != 0 and num > 3:
-                #all but right row.
+                #all but right column.
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num - 3, num - 2, num, num + 1), 8))
 
-            if (num-1) % 3 != 0 and num > 3:
-                # all but left row.
+            if (num - 1) % 3 != 0 and num > 3:
+                # all but left column.
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num - 4, num - 3, num - 1, num), 8))
 
 
     def line(self):
+
         pass
 
 def print_bin(bin):
