@@ -5,7 +5,8 @@ import random
 class Spinner(object):
     def __init__(self):
         self._bins = self.bins()
-        bin_stuff.BinBuilder.allthestuffgoesherebutnotreally(bin_stuff.BinBuilder(), self)
+        buildCats = bin_stuff.BinBuilder()
+        buildCats.allthestuffgoesherebutnotreally(self)
         pass
 
     def bins(self):
