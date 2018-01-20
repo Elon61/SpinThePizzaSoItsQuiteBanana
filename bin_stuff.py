@@ -7,6 +7,15 @@ class BinBuilder(object):
     def __init__(self):
         pass
 
+    def allthestuffgoesherebutnotreally(self, spin):
+        self.straight(spin)
+        self.split(spin)
+        self.street(spin)
+        self.corner(spin)
+        self.line(spin)
+        self.twelve(spin)
+
+
     def straight(self, spin):
         for num in xrange(0, 37):
             spin.addOutcome(num, outcome.Outcome(str(num), 35))

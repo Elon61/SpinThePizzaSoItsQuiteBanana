@@ -5,6 +5,7 @@ import random
 class Spinner(object):
     def __init__(self):
         self._bins = self.bins()
+        bin_stuff.BinBuilder.allthestuffgoesherebutnotreally(bin_stuff.BinBuilder(), self)
         pass
 
     def bins(self):
@@ -14,7 +15,7 @@ class Spinner(object):
         pass
 
     def spin(self):
-        return random.choice(self._bins)
+        return (random.choice(self._bins))
 
     def addOutcome(self, numDex, outcomed):
         """
