@@ -45,8 +45,14 @@ class BinBuilder(object):
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}".format(num - 1, num, num + 1), 11))
 
 
-    def corner(self):
-        pass
+    def corner(self, spin):
+        for num in xrange(1, 37):
+            if num % 3 != 0 and num < 34:
+                #all but right row.
+                spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num, num + 1, num + 3, num+4), 8))
+            if (num-1) % 3 != 0 and num < 34:
+                # all but right row.
+                spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num - 1, num, num + 3, num + 4), 8))
 
     def line(self):
         pass
