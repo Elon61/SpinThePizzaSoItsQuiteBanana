@@ -64,9 +64,19 @@ class BinBuilder(object):
                 spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}".format(num - 4, num - 3, num - 1, num), 8))
 
 
-    def line(self):
+    def line(self, spin):
+        for num in xrange(1, 37):
+            x = num - ((num + 2) % 3)
+            if num > 3:
+                y = x - 3
+                spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}-{}-{}".format(*[y + i for i in xrange(6)]), 5))
+            if num < 34:
+                spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}-{}-{}".format(*[x + i for i in xrange(6)]), 5))
 
-        pass
+    def twelve(self, spin):
+        for num in xrange(1, 37):
+            x = num - ((num - 1) % 12)
+            spin.addOutcome(num, outcome.Outcome("{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}".format(*[x + i for i in xrange(12)]), 2))
 
 def print_bin(bin):
     for i in xrange(0, 38):
