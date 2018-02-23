@@ -16,7 +16,7 @@ class Spinner(object):
         pass
 
     def spin(self):
-        return (random.choice(self._bins))
+        return random.choice(self._bins)
 
     def addOutcome(self, numDex, outcomed):
         """
