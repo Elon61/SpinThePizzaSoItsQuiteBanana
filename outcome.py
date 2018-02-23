@@ -51,3 +51,10 @@ class Outcome(object):
         :rtype: int
         """
         return amount * self._odds
+
+    def loseAmount(self, amount):
+        """
+        :return: Multiply this Outcome's odds by the given amount. The product is returned.
+        :rtype: int
+        """
+        return amount
