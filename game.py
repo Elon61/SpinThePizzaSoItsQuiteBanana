@@ -8,18 +8,18 @@ class Game(object):
         self._table = table.Table()
 
     def _fetch_bets(self):
-        for players in self._players:
-            bet = players.new_bet()
-            self._bets2players[bet] = players
+        for player in self._players:
+            bet = player.new_bet()
+            self._bets2players[bet] = player
 
     def _put_bets_on_table(self):
         for bet in self._bets2players:
             self._table.add_bet(bet)
 
-    def _notify_players(self, wb, lb):
-        for bet in wb:
+    def _notify_players(self, won_bet, lost_bet):
+        for bet in won_bet:
             self._bets2players[bet].won_bet(bet)
-        for bet in lb:
+        for bet in lost_bet:
             self._bets2players[bet].lost_bet(bet)
 
     def play_round(self):
