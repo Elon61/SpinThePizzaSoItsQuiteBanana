@@ -4,8 +4,8 @@ class Game(object):
         self._bets2players = {}
         self._players = players
         self._bank = bank
-        self._spin_It = spinner.Spinner
-        self._curr_table = table.Table()
+        self._spin_It = spinner.Spinner()
+        self._table = table.Table()
 
     def _fetch_bets(self):
         for p in self._players:
@@ -14,9 +14,10 @@ class Game(object):
 
     def _put_bets_on_table(self):
         for t in self._bets2players:
-            self._curr_table.add_bet(t)
+            self._table.add_bet(t)
 
     def play_round(self):
+        self.table
         wowtcome = self._spin_It.spin()
-        win_bet = self._curr_table.get_winning_bet(wowtcome)
-        lose_bet = self._curr_table.get_losing_bets(wowtcome)
+        winning_bets = self._table.get_winning_bets(wowtcome)
+        losing_bets = self._table.get_losing_bets(wowtcome)
