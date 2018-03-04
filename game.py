@@ -6,7 +6,6 @@ class Game(object):
         self._bank = bank
         self._spin_It = spinner.Spinner
         self._curr_table = table.Table()
-        self._outcomes = 0 # outcome list?
 
     def _fetch_bets(self):
         for p in self._players:
