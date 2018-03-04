@@ -3,4 +3,4 @@ import outcome
 import bin_stuff
 banana = spinner.Spinner()
 print banana.spin()
-#print banana._bins
+print banana._bins

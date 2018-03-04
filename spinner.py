@@ -15,7 +15,7 @@ class Spinner(object):
     def spin(self):
         return random.choice(self._bins)
 
-    def addOutcome(self, numDex, outcomed):
+    def add_outcome(self, numDex, outcomed):
         """
         takes index in the tuple of bins. take bin at that place. add 'outcome' to that bin
         changes __bins
