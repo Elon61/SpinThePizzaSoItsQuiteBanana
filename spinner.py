@@ -12,9 +12,6 @@ class Spinner(object):
     def bins(self):
         return [bin_stuff.Bin([]) for i in range(38)]
 
-    def rng(self):
-        pass
-
     def spin(self):
         return random.choice(self._bins)
 

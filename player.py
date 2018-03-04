@@ -8,14 +8,14 @@ class Player(object):
         self._losses = 0
         self._mood = mood
         self._can_swim = swim_skills
-        self._betHistory = []
+        self._bet_history = []
 
     def won_bet(self, bet):
         """
         :return: Next time you won't get so lucky.
         """
         self._wins += 1
-        self._mood += 1
+        self._mood += 10
         self._gold += bet.get_outcome().winAmount(bet.getGold)
         self._betHistory.append((bet, True))
 
@@ -33,3 +33,6 @@ class Player(object):
         :return: a new bet
         """
         return Bet(Outcome("10", 35), random.randint(0, self._gold))
+
+    def get_mood(self):
+        return self._losses + 10 * self._wins

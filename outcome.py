@@ -45,14 +45,14 @@ class Outcome(object):
         """
         return "Outcome({!r} {})".format(self._name, self._odds)
 
-    def winAmount(self, amount):
+    def win_amount(self, amount):
         """
         :return: Multiply this Outcome's odds by the given amount. The product is returned.
         :rtype: int
         """
         return amount * self._odds
 
-    def loseAmount(self, amount):
+    def lose_amount(self, amount):
         """
         :return: Multiply this Outcome's odds by the given amount. The product is returned.
         :rtype: int

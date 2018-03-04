@@ -6,5 +6,8 @@ class Bet(object):
     def get_outcome(self):
         return self._outcome
 
-    def getGold(self):
-        return self._gold
+    def get_win_amount(self):
+        return self.outcome().win_amount(self._gold)
+
+    def get_lose_amount(self):
+        return self.outcome().lose_amount(self._gold)
