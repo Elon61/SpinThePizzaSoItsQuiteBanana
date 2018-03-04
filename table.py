@@ -11,6 +11,3 @@ class Table(object):
 
     def get_losing_bets(self, winning_outcomes):
         return [b for b in self._bets if b.get_outcome() not in winning_outcomes]
-
-    def reset(self):
-        self._bets = []
