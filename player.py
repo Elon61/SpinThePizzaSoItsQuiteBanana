@@ -2,7 +2,7 @@ from bet import *
 from outcome import *
 import random
 class Player(object):
-    def __init__(self, gold=0, mood='tired', swim_skills=False):
+    def __init__(self, gold=0, mood=1337, swim_skills=False):
         self._gold = gold
         self._wins = 0
         self._losses = 0
@@ -23,7 +23,7 @@ class Player(object):
         """
         :return: Sadness.
         """
-        self._losses -= 1
+        self._losses += 1
         self._mood -= 1
         self._gold -= bet.get_lose_amount()
         self._bet_history.append((bet, False))
