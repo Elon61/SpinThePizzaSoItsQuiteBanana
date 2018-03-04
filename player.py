@@ -16,8 +16,8 @@ class Player(object):
         """
         self._wins += 1
         self._mood += 10
-        self._gold += bet.get_outcome().winAmount(bet.getGold)
-        self._betHistory.append((bet, True))
+        self._gold += bet.get_win_amount()
+        self._bet_history.append((bet, True))
 
     def lost_bet(self, bet):
         """
@@ -25,8 +25,8 @@ class Player(object):
         """
         self._losses -= 1
         self._mood -= 1
-        self._gold -= bet.get_outcome().loseAmount(bet.getGold)
-        self._betHistory.append((bet, False))
+        self._gold -= bet.get_lose_amount()
+        self._bet_history.append((bet, False))
 
     def new_bet(self):
         """
