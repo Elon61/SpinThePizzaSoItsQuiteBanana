@@ -38,4 +38,3 @@ class game_round(object):
         wowtcome = self._spin_It.spin()
         winning_bets = self._table.get_winning_bets(wowtcome)
         losing_bets = self._table.get_losing_bets(wowtcome)
-
