@@ -1,16 +1,17 @@
 import bin_stuff
-import outcome
 import random
 
+
 class Spinner(object):
-    def __init__(self):
-        self._bins = self.bins()
-        buildCats = bin_stuff.BinBuilder()
-        buildCats.allthestuffgoesherebutnotreally(self)
+    SPINNER_SIZE = 38
+
+    def __init__(self, builder=bin_stuff.BinBuilder()):
+        self._bins = self._bins()
+        builder.allthestuffgoesherebutnotreally(self)
         pass
 
-    def bins(self):
-        return [bin_stuff.Bin([]) for i in range(38)]
+    def _bins(self):
+        return [bin_stuff.Bin([]) for _ in xrange(Spinner.SPINNER_SIZE)]
 
     def spin(self):
         return random.choice(self._bins)
