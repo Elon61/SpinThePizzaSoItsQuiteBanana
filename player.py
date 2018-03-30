@@ -1,14 +1,17 @@
 from bet import *
 from outcome import *
 import random
+
 class Player(object):
-    def __init__(self, gold=0, mood=1337, swim_skills=False):
+    def __init__(self, strategy, gold=0, mood=1337, swim_skills=False):
         self._gold = gold
         self._wins = 0
         self._losses = 0
         self._mood = mood
         self._can_swim = swim_skills
         self._bet_history = []
+        self._strategy = strategy
+
 
     def won_bet(self, bet):
         """
@@ -32,7 +35,11 @@ class Player(object):
         """
         :return: a new bet
         """
-        return Bet(Outcome("10", 35), random.randint(0, self._gold))
+        return self._strategy.new_bet(self._bet_history)
+        #return Bet(Outcome("10", 35), random.randint(0, self._gold))
 
     def get_mood(self):
         return self._losses + 10 * self._wins
+
+    def get_gold(self):
+        return self._gold

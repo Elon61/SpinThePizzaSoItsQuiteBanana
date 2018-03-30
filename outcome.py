@@ -1,3 +1,5 @@
+import bin_stuff
+import spinner
 class Outcome(object):
     """
     is an outcome
@@ -58,3 +60,15 @@ class Outcome(object):
         :rtype: int
         """
         return amount
+
+    def builder(self, outcome_value): #makes an outcome out of the representative string of the outcome, checks for validity on my unfinished generator; is there any way not to recreate a generator every time?
+        """
+        :param outcome_value:
+        :type outcome_value: str
+        :return:
+        """
+        t_outcome = Outcome(outcome_value, 35 / (len(outcome_value.split("-"))))
+        spin = spinner.Spinner() # less cool
+        if t_outcome in spin._bin():
+            return t_outcome
+        return Outcome("10", 35)
