@@ -1,7 +1,6 @@
 import abc
 import bet
 import outcome
-import random
 
 class PlayingSAtragtegy(object):
     __metaclass__ = abc.ABCMeta
