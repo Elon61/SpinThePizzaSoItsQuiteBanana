@@ -1,5 +1,4 @@
 import outcome
-import spinner
 class Bin(set):
     pass
 
